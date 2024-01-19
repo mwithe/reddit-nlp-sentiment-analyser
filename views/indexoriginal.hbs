@@ -1,0 +1,79 @@
+  <h5 id="overview-title">Overview of r/{{subreddit}} Sentiment</h5>
+  <div id="overview-section">
+    <div class="subreddit-info">
+      <div class="subreddit-info-card">
+        <h6>Post Sentiment</h6>
+        <p>Total Post Sentiment Score: {{overview.totalPostScore.N}}</p>
+        <p>Average Post Sentiment Score: {{overview.averagePostScore.N}}</p>
+      </div>
+      <div class="subreddit-info-card">
+        <h6>Comment Sentiment</h6>
+        <p>Positive Sentiment Comments: {{overview.commentPositivityIndex.N}}%</p>
+        <p>Negative Sentiment Comments: {{overview.commentNegativityIndex.N}}%</p>
+      </div>
+      <div class="subreddit-info-card">
+        <h6>User Comments Review</h6>
+        <p>Total Comments: {{overview.commentsTotal.N}}</p>
+        <p>Positive Comments: {{overview.positiveCommentsCount.N}}</p>
+        <p>Neutral Comments: {{overview.neutralCommentsCount.N}}</p>
+        <p>Negative Comments: {{overview.negativeCommentsCount.N}}</p>
+      </div>
+      <div class="subreddit-info-card">
+        <h6>How it works</h6>
+        <p>Positive: 0.250 or higher</p>
+        <p>Neutral: -0.249 to +0.249</p>
+        <p>Negative: -0.250 or lower</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div id="posts-section">
+      <h5>r/{{subreddit}} Posts</h5>
+      <div class="posts-cards">
+        {{#each posts}}
+          <div class="post-card">
+            <h6>{{this.title.S}}</h6>
+            <p>Comments: {{this.commentsCount.N}}</p>
+            <p>Post Sentiment Score: {{this.averagePostSentimentScore.N}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div id="people-section">
+      <h5>Popular Entities</h5>
+      <div class="people-cards">
+      {{#each people}}
+        <div class="people-card">
+            <h6>{{this.name.S}}</h6>
+            <p>Mentions: {{this.mentions.N}}</p>
+            <p>Average Sentiment Analysis Score: {{this.average.S}}</p>
+        </div>
+      {{/each}}
+    </div>
+    </div>
+  </div>
+
+  <div id="comments-section">
+    <h4 id="highlighted-comments">Highlighted Comments</h4>
+    <div class="most-positive-card">
+      <h6>Most Positive Comment on Subreddit</h6>
+      <p>Sentiment Score: {{overview.mostPositiveCommentScore.N}}</p>
+      <p>{{overview.mostPositiveComment.S}}</p>
+    </div>
+
+    <div class="most-negative-card">
+      <h6>Most Negative Comment on Subreddit {{subreddit}}</h6>
+      <p>Sentiment Score: {{overview.mostNegativeCommentScore.N}}</p>
+      <p>{{overview.mostNegativeComment.S}}</p>
+    </div>
+  </div>
+
+  <div id="footer-section">
+    <hr>
+    <h6>CAB423 Assignment 2, Semester 2 2023</h6>
+    <p>Adam Bona n9467777</p>
+    <p>Matt Withey n8824703</p>
+  </div>
+</div>

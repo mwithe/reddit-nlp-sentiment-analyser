@@ -1,0 +1,217 @@
+body {
+  padding: 50px;
+  font: 14px Helvetica, Arial, sans-serif;
+  background-color: #212121 !important;
+}
+
+a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: rgba(255, 86, 0, 1) !important;
+  transition-duration: 500ms;
+}
+
+p {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+span {
+  color: white;
+}
+
+input[type="submit"] {
+  all: unset;
+  padding: 3px 10px;
+  border-color: rgba(255, 86, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  color: white;
+  margin-left: 1em;
+}
+
+input[type="submit"]:hover {
+  background-color: rgba(255, 86, 0, 1);
+  transition-duration: 500ms;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr;
+}
+
+#header-section {
+  color: white;
+  padding: 1em;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#search-section {
+  margin: 1em;
+}
+
+#search-section label {
+  color: white;
+}
+
+#overview-title {
+  margin-top: 1em;
+  color: #FF5600;
+}
+
+#overview-section {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+.subreddit-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.subreddit-info-card {
+  color: white;
+  border-radius: 10px;
+  margin: 0.5em;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  color: black;
+}
+
+.main-content h5 {
+  color: white;
+}
+
+#posts-section {
+  border-style: solid;
+  border-width: 1px;
+  border-color: 	rgba(255, 86, 0, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border-radius: 10px;
+  margin: 0.5em;
+}
+
+/* #posts-section:hover {
+  border-width: 1px;
+  border-color: rgba(187, 134, 252, 1);
+  transition-duration: 500ms;
+} */
+
+.posts-cards {
+  height: 700px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.post-card {
+  padding: 0.5em;
+  margin: 0.5em;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+#people-section {
+  background-color: rgba(255, 86, 0, 0.4);
+  border-style: solid;
+  border-width: 1px;
+  border-color:rgba(255, 86, 0, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border-radius: 10px;
+  margin: 0.5em;
+}
+
+/* #people-section:hover {
+  border-width: 1px;
+  border-color: rgba(187, 134, 252, 1);
+  transition-duration: 200ms;
+} */
+
+.people-cards {
+  height: 700px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.people-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 5px;
+}
+
+#highlighted-comments {
+  margin-top: 1em 0;
+  color: #FF5600;
+}
+
+#comments-section {
+  color: white;
+  padding: 1em;
+}
+
+.most-positive-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  padding: 0.5em;
+  margin: 0.5em 0 1em 0;
+  border-radius: 10px;
+}
+
+.most-negative-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  padding: 0.5em;
+  margin: 1em 0;
+  border-radius: 10px;
+}
+
+#footer-section {
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 2em;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(5rem, auto) 1fr 1fr 1fr auto;
+    grid-template-areas:
+      "header"
+      "search"
+      "posts"
+      "people"
+      "comments"
+      "footer";
+  };
+};

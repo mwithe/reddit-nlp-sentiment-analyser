@@ -1,0 +1,94 @@
+<div class="container">
+
+  <div id="header-section">
+    <h1><a href='/'>Reddit Analyser</a></h1>
+    <p>Perform sentiment analysis on Reddit subreddits through <span>Natural Language Processing</span> and <span>Named Entity Recognition</span>.</p>
+  </div>
+
+  <div id="search-section">
+    <form action="/search/subredditName/" method="get">
+    <label for="subredditSearch">r/</label>
+    <input type="text" id="subredditId" name="subredditName" placeholder="Search for a Subreddit..."><input type="submit" value="Submit">
+    </form>
+  </div>
+
+
+  <h5 id="overview-title">Overview of r/{{data.title}} Sentiment</h5>
+  <div id="overview-section">
+    <div class="subreddit-info">
+      <div class="subreddit-info-card">
+        <h6>Post Sentiment</h6>
+        <p>Total Post Sentiment Score: {{data.values.totalPostScore}}</p>
+        <p>Average Post Sentiment Score: {{data.values.averagePostScore}}</p>
+      </div>
+      <div class="subreddit-info-card">
+        <h6>Comment Sentiment</h6>
+        <p>Positive Sentiment Comments: {{data.values.commentPositivityIndex}}%</p>
+        <p>Negative Sentiment Comments: {{data.values.commentNegativityIndex}}%</p>
+      </div>
+      <div class="subreddit-info-card">
+        <h6>User Comments Review</h6>
+        <p>Total Comments: {{data.values.commentsTotal}}</p>
+        <p>Positive Comments: {{data.values.positiveCommentsCount}}</p>
+        <p>Neutral Comments: {{data.values.neutralCommentsCount}}</p>
+        <p>Negative Comments: {{data.values.negativeCommentsCount}}</p>
+      </div>
+      <div class="subreddit-info-card">
+        <h6>How it works</h6>
+        <p>Positive: 0.250 or higher</p>
+        <p>Neutral: -0.249 to +0.249</p>
+        <p>Negative: -0.250 or lower</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div id="posts-section">
+      <h5>r/{{data.title}} Posts</h5>
+      <div class="posts-cards">
+        {{#each data.posts}}
+          <div class="post-card">
+            <h6>{{this.title}}</h6>
+            <p>Comments: {{this.commentsCount}}</p>
+            <p>Post Sentiment Score: {{this.averagePostSentimentScore}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div id="people-section">
+      <h5>Popular Entities</h5>
+      <div class="people-cards">
+      {{#each data.people}}
+        <div class="people-card">
+            <h6>{{this.name}}</h6>
+            <p>Mentions: {{this.mentions}}</p>
+            <p>Average Sentiment Analysis Score: {{this.average}}</p>
+        </div>
+      {{/each}}
+    </div>
+    </div>
+  </div>
+
+  <div id="comments-section">
+    <h4 id="highlighted-comments">Highlighted Comments</h4>
+    <div class="most-positive-card">
+      <h6>Most Positive Comment on Subreddit</h6>
+      <p>Sentiment Score: {{data.values.mostPositiveCommentScore}}</p>
+      <p>{{data.values.mostPositiveComment}}</p>
+    </div>
+
+    <div class="most-negative-card">
+      <h6>Most Negative Comment on Subreddit</h6>
+      <p>Sentiment Score: {{data.values.mostNegativeCommentScore}}</p>
+      <p>{{data.values.mostNegativeComment}}</p>
+    </div>
+  </div>
+
+  <div id="footer-section">
+    <hr>
+    <h6>CAB423 Assignment 2, Semester 2 2023</h6>
+    <p>Adam Bona n9467777</p>
+    <p>Matt Withey n8824703</p>
+  </div>
+</div>
