@@ -1,10 +1,10 @@
 const axios = require('axios');
 const fs = require('fs');
 
-const CLIENT_ID = '';
-const CLIENT_SECRET = '';
-const USERNAME = '';
-const PASSWORD = '';
+const CLIENT_ID = '6cMffBC0U2Sari-hMcI2oA';
+const CLIENT_SECRET = 'IcykqPxZGrK-Mi8YqmcJ20RzxFGBDg';
+const USERNAME = 'Substantial-Corgi995';
+const PASSWORD = 'RedditPassword';
 
 const auth = {
   username: CLIENT_ID,
@@ -18,7 +18,7 @@ const data = {
 };
 
 const headers = {
-  'User-Agent': '',
+  'User-Agent': 'MyAPI',
 };
 
 async function getRedditPost(subreddit) {
